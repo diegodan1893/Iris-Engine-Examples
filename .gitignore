@@ -1,0 +1,4 @@
+*.exe
+*.dll
+*.bat
+*[Ss]haders/
