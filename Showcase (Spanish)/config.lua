@@ -2,7 +2,7 @@
 
 game = {
 	-- The name of the game. It will be displayed in the title of the window.
-	name = "720p Template",
+	name = "Iris Engine Showcase",
 
 	-- Path to the icon of the window. The file can be in any supported format.
 	iconFile = "assets/images/icon.png",
