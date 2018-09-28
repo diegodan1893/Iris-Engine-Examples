@@ -489,7 +489,15 @@ local function dontBelieve()
 	sakura:show("normal")
 
 	s "Sígueme."
-	--@todo minijuego---------------------------------------------------------------------------------------------------------
+
+	hideText()
+	scene("black.png", {type=Transition.imageDissolve, image="wipe right.png", time=1})
+	sleep(0.5)
+
+	-- Start Pong minigame
+	dofile("assets/scripts/pong/pong.lua")
+	pong.init()
+	pong.tutorial()
 end
 
 q = Question.new{
