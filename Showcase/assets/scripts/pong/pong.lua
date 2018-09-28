@@ -16,6 +16,9 @@ local ball, playerPaddle, cpuPaddle, scoreboard
 local playerScore = 0
 local cpuScore = 0
 
+-- Transitions
+local showTransition = {type=Transition.fade, time=1, block=false}
+
 -- Classes
 local function createBall(sprite)
 	local ball = {}
@@ -178,7 +181,7 @@ local function createBall(sprite)
 	-- Constructor code
 	-- Center and show the sprite
 	ball.center()
-	sprite:show()
+	sprite:show(showTransition)
 
 	return ball
 end
@@ -219,7 +222,7 @@ local function createPaddle(sprite, position, controller)
 
 	-- Constructor code
 	sprite:setPosition(position.x, position.y)
-	sprite:show()
+	sprite:show(showTransition)
 
 	return paddle
 end
@@ -240,11 +243,11 @@ local function createScoreboard(spritePath)
 	-- Constructor code
 	playerScoreSprite:defineSpriteSheet(4, 4, 1, 0)
 	playerScoreSprite:setPosition(playerScorePos.x, playerScorePos.y)
-	playerScoreSprite:show()
+	playerScoreSprite:show(showTransition)
 
 	cpuScoreSprite:defineSpriteSheet(4, 4, 1, 0)
 	cpuScoreSprite:setPosition(cpuScorePos.x, cpuScorePos.y)
-	cpuScoreSprite:show()
+	cpuScoreSprite:show(showTransition)
 
 	return scoreboard
 end
@@ -315,9 +318,14 @@ local function resetGame()
 	cpuPaddle.reset()
 end
 
--- Check if any of the player has won the game
+-- Check if any of the participants have won
 local function winCondition()
 	return playerScore >= 3 or cpuScore >= 3
+end
+
+-- Check if the player has won the game
+local function playerWon()
+	return playerScore >= 3
 end
 
 -- End the game
@@ -336,7 +344,7 @@ pong.init = function()
 	scene("black.png", 0)
 
 	-- Display the court as background
-	setBackground("pong.png", {type=Transition.dissolve, time=0.3, block=false})
+	setBackground("pong.png", {type=Transition.dissolve, time=1, block=false})
 
 	-- Create the objects for the game
 	ball = createBall(Sprite.new("ball.png", 2))
@@ -350,8 +358,7 @@ end
 
 -- Explain how to play the game
 pong.tutorial = function()
-	say "Tutorial"
-	hideText()
+	dofile("assets/scripts/pong/" .. lang .. "tutorial.lua")
 end
 
 -- Start minigame
@@ -378,4 +385,7 @@ pong.play = function()
 
 	-- Clean
 	endGame()
+
+	-- Return whether or not the player won
+	return playerWon()
 end

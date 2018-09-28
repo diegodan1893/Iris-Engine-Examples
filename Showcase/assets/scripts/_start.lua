@@ -8,13 +8,4 @@ end
 
 lang = "es/"
 
---openScript(lang .. "demo.lua")
-
-dofile("assets/scripts/pong/pong.lua")
-sleep(2)
-pong.init()
-pong.tutorial()
-
-while true do
-pong.play()
-end
+openScript(lang .. "demo.lua")

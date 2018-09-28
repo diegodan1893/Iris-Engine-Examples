@@ -498,6 +498,87 @@ local function dontBelieve()
 	dofile("assets/scripts/pong/pong.lua")
 	pong.init()
 	pong.tutorial()
+
+	local playerWon = pong.play()
+
+	local qWin = Question.new{
+		"Vale, volvamos a jugar", true,
+		"Mejor lo dejamos para otro día", false
+	}
+
+	local qLose = Question.new{
+		"¿Eres capaz de repetirlo?", true,
+		"Ya te ganaré otro día", false
+	}
+
+	local continue = false
+
+	while not continue do
+		if playerWon then
+			sleep(0.5)
+			sakuraPong:show("nervious")
+			sleep(0.3)
+
+			s "¿He perdido?"
+
+			sakuraPong:show("angry")
+
+			s "¡No puede ser! ¡Seguro que has hecho trapa!"
+			s "¡Quiero la revancha!"
+
+			qWin:ask()
+
+			if qWin.answer then
+				h "Muy bien, pero el resultado no va a cambiar."
+				s "¡Esta vez pienso ganar!"
+
+				hideText()
+				sakuraPong:hide()
+
+				playerWon = pong.play()
+			else
+				h "No, mejor lo dejamos para otro día."
+
+				hideText()
+				sakuraPong:hide()
+				continue = true
+			end
+		else
+			sleep(0.5)
+			sakuraPong:show("eyes closed")
+			sleep(0.3)
+
+			s "Je, je, je."
+
+			sakuraPong:show("normal")
+
+			s "¿Qué te ha parecido enfrentarte a la mejor jugadora de Pong del mundo?"
+
+			qLose:ask()
+
+			if qLose.answer then
+				h "¿Eres capaz de repetirlo?"
+
+				sakuraPong:show("eyes closed")
+
+				s "Por supuesto."
+
+				hideText()
+				sakuraPong:hide()
+
+				playerWon = pong.play()
+			else
+				h "Otro día no tendrás la misma suerte."
+
+				hideText()
+				sakuraPong:hide()
+				continue = true
+			end
+		end
+	end
+
+	scene("black.png", {type=Transition.imageDissolve, image="wipe right.png", time=1})
+	sleep(1)
 end
 
 q = Question.new{
