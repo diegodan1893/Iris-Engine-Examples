@@ -8,7 +8,7 @@ end
 
 lang = "es/"
 
---openScript("demo.lua")
+--openScript(lang .. "demo.lua")
 
 dofile("assets/scripts/pong/pong.lua")
 sleep(2)
