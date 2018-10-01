@@ -38,7 +38,7 @@ dofile("assets/scripts/transitions.lua")
 -- Script
 scene("sky day.png", 1.5)
 
---@todo musica---------------------------------------------------------------------------------------------------------
+playMusic("Pond.ogg")
 
 say "Voy de camino a casa."
 say "Hace buen tiempo, el cielo está relativamente despejado y se puede oír el piar de algunos pájaros a lo lejos."
@@ -200,8 +200,8 @@ sakura:show("normal")
 
 s "Y pronto anochecerá."
 
-setBackground("street night.png", {type=Transition.dissolve, time=400, block=false})
---@todo musica---------------------------------------------------------------------------------------------------------
+setBackground("street night.png", {type=Transition.dissolve, time=300, block=false})
+playMusic("Inspiration.ogg")
 
 s "Bueno, sigamos."
 
@@ -491,6 +491,7 @@ local function dontBelieve()
 	s "Sígueme."
 
 	hideText()
+	fadeOutMusic(2)
 	scene("black.png", {type=Transition.imageDissolve, image="wipe right.png", time=1})
 	sleep(0.5)
 
@@ -618,7 +619,7 @@ local function technical()
 	sleep(0.5)
 	scene("lookout.png", {type=Transition.imageDissolve, image="wipe right.png", time=1})
 
-	--@todo música---------------------------------------------------------------------------------------------------------
+	playMusic("Pond.ogg")
 
 	say "Al final acabamos en un mirador desde el que se puede ver toda la ciudad."
 	say "No es que aquí haga menos frío que donde estábamos antes, pero qué se le va a hacer."
