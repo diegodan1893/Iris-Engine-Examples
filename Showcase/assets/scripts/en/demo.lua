@@ -39,90 +39,90 @@ scene("sky day.png", 1.5)
 
 playMusic("Pond.ogg")
 
-say "Voy de camino a casa."
-say "Hace buen tiempo, el cielo está relativamente despejado y se puede oír el piar de algunos pájaros a lo lejos."
+say "I'm on my way home."
+say "The weather is nice, there aren't many clouds in the sky, and you can hear the chirping of birds in the distance."
 
 hideText()
 scene("street day.png", 1)
 
-say "El camino es bastante largo, pero no puedo decir que se me haga pesado."
-say "Muchas veces me pierdo en mis pensamientos y para cuando me quiero dar cuenta ya he llegado a mi destino, así que no me aburro."
+say "It's a rather long walk, but I can't say it's boring."
+say "Most of the time I get lost in thought and reach my destination before I know it."
 
-s "Perdona..."
-h "(¿Eh? ¿Me ha llamado alguien?)"
+s "Excuse me."
+h "(Huh? What was that?)"
 
 sakura:show("normal")
-s.name = "Chica"
+s.name = "Girl"
 
-say "Me giro un momento y veo a una chica que parece querer algo."
-h "¿Sí?"
-s ("Hola. Te llamas " .. h.name .. ", ¿verdad?")
-s "¿Tienes un momento? Quiero hablarte de algo muy interesante."
+say "I turn around to see a girl who appears to need something."
+h "Yes?"
+s ("Hi. You're " .. h.name .. ", right?")
+s "Do you have a moment? I have something really interesting to tell you."
 
 -- First question
 local function myName()
-	h "¿Cómo sabes tú mi nombre?"
+	h "How do you know my name?"
 
 	sakura:show("smiling")
 
-	s "No te preocupes por esos detalles sin importancia."
-	h "¿Sin importancia...?"
+	s "Don't worry about insignificant details."
+	h "Insignificant?"
 	say "..."
-	h "(Bueno, tampoco tengo nada mejor que hacer.)"
-	h "Está bien, cuéntame."
+	h "(Well, it's not like I have anything else to do right now.)"
+	h "Okay, tell me."
 end
 
 local function haveTime()
-	h "(Bueno, tampoco tengo nada mejor que hacer.)"
-	h "Sí, claro. Adelante, cuéntame."
+	h "(Well, it's not like I have anything else to do right now.)"
+	h "Of course. What is it?"
 end
 
 local function dontHaveTime()
-	h "No, lo siento, tengo cosas que hacer."
-	h "(Y probablemente solo quiere hacer propaganda de alguna secta religiosa o algo.)"
+	h "I'm sorry, but I'm busy right now."
+	h "(She probably just wants to tell me about some religious sect or something anyway.)"
 
 	sakura:show("serious")
 
-	s "Oh, vaya. Qué pena."
-	s "Bueno, entonces te dejo en paz."
-	s "Adiós."
-	h "Adiós."
+	s "Oh, that's a shame."
+	s "In that case, I won't bother you anymore."
+	s "Bye."
+	h "Bye."
 
 	hideText()
 	scene("black.png", 1)
 
-	say "Después de aquello cada uno siguió su camino y nunca volvimos a vernos."
-	say "Aún me pregunto por qué sabía mi nombre, pero supongo que nunca lo sabré."
+	say "After that, each one walked their own path and we never met again."
+	say "I still don't know why she knew my name, and I guess I never will."
 
 	badEnd()
 end
 
 local function doIKnowYou()
-	h "¿Nos conocemos?"
+	h "Do I know you?"
 
 	sakura:show("serious")
 
-	s "No que yo sepa."
-	h "Hum..."
-	h "(Tengo la sensación de que esto ya lo he vivido antes.)"
-	h "(Y de que aquí hay un chiste que se está perdiendo...)"
-	h "(En fin...)"
-	h "¿Y qué es lo que querías contarme?"
+	s "I don't think so."
+	h "Hmm..."
+	h "(For some reason I get the feeling that I've already had this conversation before.)"
+	h "(And that there was a joke here that was lost in the final version of the game.)"
+	h "(Anyway...)"
+	h "What did you want to talk about?"
 end
 
 local q = Question.new{
-	"¿Cómo sabes mi nombre?", myName,
-	"Sí, claro, adelante", haveTime,
-	"No tengo tiempo", dontHaveTime,
-	"¿Nos conocemos?", doIKnowYou
+	"How do you know my name?", myName,
+	"Of course. What is it?", haveTime,
+	"Sorry, I don't have time right now", dontHaveTime,
+	"Do I know you?", doIKnowYou
 }
 q:ask()
 
 sakura:show("normal")
 
 s.name = "Sakura"
-s ("Verás, me llamo " .. s.name .. " y vengo de parte de Diego para hablarte de un motor que ha creado desde cero para hacer novelas visuales.")
-h "¿Desde cero?"
+s ("Okay, so my name is " .. s.name .. " and Diego sent me here to tell you about a new visual novel engine he has made from scratch.")
+h "From scratch?\n(And who is this Diego anyway?)"
 s "Bueno, usa algunas bibliotecas de C++ para cargar los archivos, dibujar en pantalla y reproducir sonidos y música. Tampoco era necesario reinventar la rueda."
 h "Y lo dice después de crear un motor para novelas visuales cuando existen ya un montón."
 
