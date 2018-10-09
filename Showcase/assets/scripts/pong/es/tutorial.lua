@@ -1,5 +1,5 @@
 -- Definition of characters
-local s = Character.new("sakura")
+local s = Character.new("Sakura")
 
 -- Definition of character sprites
 sakuraPong = CharacterSprite.new("sakura1.png", Position.center, 200)

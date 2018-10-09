@@ -140,7 +140,7 @@ sakura:show("happy")
 s "Ah, ya sé. Por el texto. Es una parte fundamental de las novelas visuales."
 h "De acuerdo."
 h "(Se la ve muy entusiasmada.)"
-s "El tamaño y la posición de la zona en la que aparece el texto que estás leyendo ahora mismo es completamente personalizable para cada juego. Y el fondo también."
+s "El tamaño y la posición de la zona en la que aparece el texto que estás leyendo ahora mismo son completamente personalizables para cada juego. Y el fondo también."
 s "Y, como puedes ver, tiene soporte para fuentes no monoespaciadas, lo que significa que la letra 'i', por poner un ejemplo, es menos ancha que la letra 'm'."
 s "Es algo que se echa de menos en algunos motores japoneses."
 s "¡Ah! ¿Y sabes qué? También soporta texto en cualquier idioma. ¡Mira, mira!"
@@ -523,7 +523,7 @@ local function dontBelieve()
 
 			sakuraPong:show("angry")
 
-			s "¡No puede ser! ¡Seguro que has hecho trapa!"
+			s "¡No puede ser! ¡Seguro que has hecho trampa!"
 			s "¡Quiero la revancha!"
 
 			qWin:ask()
