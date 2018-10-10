@@ -65,7 +65,7 @@ local function myName()
 
 	sakura:show("smiling")
 
-	s "Don't worry about insignificant details."
+	s "Don't worry about the insignificant details."
 	h "Insignificant?"
 	say "..."
 	h "(Well, it's not like I have anything else to do right now.)"
@@ -198,7 +198,7 @@ sakura:show("normal")
 
 s "And it will be night soon."
 
-setBackground("street night.png", {type=Transition.dissolve, time=300, block=false})
+setBackground("street night.png", {type=Transition.dissolve, time=360, block=false})
 playMusic("Inspiration.ogg")
 
 s "Okay, let's continue."
@@ -342,7 +342,7 @@ s "And now I'm laughing."
 
 sakura:setBase("sakura3.png", "sakura2.png", "normal")
 
-s "And, of course, it is possible to change the speed of the transition or remove it completely."
+s "And, of course, it is possible to change the speed of the transition or to remove it completely."
 
 transitions.hideFadeLeft(script2)
 sakura:setBase("sakura2.png", "sakura2.png", "cheerful")
@@ -351,14 +351,13 @@ s "But there is more."
 s "Ease of use is crucial, but the language must also be powerful and flexible."
 s "Many developers love to add minigames to their novels."
 s "And not only that. Maybe you have a sequence of commands that appears multiple times in a script and you want to reduce it to a single line to save some typing, such as a custom transition."
-h "Makes sense."
 s "Well, guess what!"
 
 sakura:show("happy")
 
 s "Every bit of code you've seen so far is 100% valid in Lua."
 s "In fact, the scripts of this engine are written in Lua."
-s "Lua is a full programming language, however, its syntax is so simple that those who don't know won't realize they are writing code."
+s "Lua is a full programming language, however, its syntax is so simple that those who don't know that won't realize they are writing code."
 s "You have already seen how easy it is to write dialogue."
 
 sakura:setBase("sakura3.png", "sakura2.png", "normal")

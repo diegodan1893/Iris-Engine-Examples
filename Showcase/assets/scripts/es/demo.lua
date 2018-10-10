@@ -199,7 +199,7 @@ sakura:show("normal")
 
 s "Y pronto anochecerá."
 
-setBackground("street night.png", {type=Transition.dissolve, time=300, block=false})
+setBackground("street night.png", {type=Transition.dissolve, time=360, block=false})
 playMusic("Inspiration.ogg")
 
 s "Bueno, sigamos."
