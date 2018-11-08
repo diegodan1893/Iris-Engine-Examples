@@ -2,6 +2,6 @@
 *.dll
 *.bat
 *[Ss]haders/
-*[Rr]elease/
+*[Rr]eleases/
 *licenses.txt
 *exclude.txt
