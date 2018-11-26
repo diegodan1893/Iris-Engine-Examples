@@ -158,11 +158,11 @@ q = Question.new{
 q:ask()
 
 if q.answer == 3 then
-	sakura:show("normal")
+	sakura:show("serious")
 
 	s "Charō."
-	s "Se ve que no estás muy puesto en nuestra jerga. Me decepcionas."
-	s "Bueno, en realidad era una broma interna..."
+	s "¿No has pillado la referencia? Me decepcionas."
+	s "A ver, no es muy conocida, pero aun así..."
 end
 
 sakura:show("eyes closed")
@@ -191,6 +191,7 @@ s "Que empieza. Dale clic."
 
 hideText()
 scene("street evening.png", 3)
+sakura:setColorLUT("evening.png", 0)
 
 h "¡Está atardeciendo!"
 s "Sí. Qué rápido pasa el tiempo, ¿verdad?"
@@ -200,6 +201,7 @@ sakura:show("normal")
 s "Y pronto anochecerá."
 
 setBackground("street night.png", {type=Transition.dissolve, time=360, block=false})
+sakura:setColorLUT("night.png", 360)
 playMusic("Inspiration.ogg")
 
 s "Bueno, sigamos."
@@ -588,6 +590,7 @@ q = Question.new{
 q:ask()
 
 scene("street night.png")
+sakura:setColorLUT("night.png", 0)
 
 h "Qué tarde se ha hecho."
 
@@ -617,6 +620,7 @@ local function technical()
 	scene("black.png", {type=Transition.imageDissolve, image="wipe right.png", time=1})
 	sleep(0.5)
 	scene("lookout.png", {type=Transition.imageDissolve, image="wipe right.png", time=1})
+	sakura:setColorLUT("lookout.png", 0)
 
 	playMusic("Pond.ogg")
 

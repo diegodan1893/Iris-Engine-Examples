@@ -130,6 +130,9 @@ paths = {
 	-- The folder where gui images are located
 	gui = "assets/images/gui/",
 
+	-- The folder where color grading LUTs are located
+	luts = "assets/images/LUTs/",
+
 	-- The folder where BGM files are located
 	music = "assets/music/",
 

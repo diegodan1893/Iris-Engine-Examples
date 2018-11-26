@@ -190,6 +190,7 @@ h "I won't."
 
 hideText()
 scene("street evening.png", 3)
+sakura:setColorLUT("evening.png", 0)
 
 h "It's getting late!"
 s "Yep. Time sure does fly."
@@ -199,6 +200,7 @@ sakura:show("normal")
 s "And it will be night soon."
 
 setBackground("street night.png", {type=Transition.dissolve, time=360, block=false})
+sakura:setColorLUT("night.png", 360)
 playMusic("Inspiration.ogg")
 
 s "Okay, let's continue."
@@ -586,6 +588,7 @@ q = Question.new{
 q:ask()
 
 scene("street night.png")
+sakura:setColorLUT("night.png", 0)
 
 h "It's getting too late."
 
@@ -615,6 +618,7 @@ local function technical()
 	scene("black.png", {type=Transition.imageDissolve, image="wipe right.png", time=1})
 	sleep(0.5)
 	scene("lookout.png", {type=Transition.imageDissolve, image="wipe right.png", time=1})
+	sakura:setColorLUT("lookout.png", 0)
 
 	playMusic("Pond.ogg")
 
